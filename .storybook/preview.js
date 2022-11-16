@@ -1,4 +1,4 @@
-import * as NextImage from "next/image";
+kaiserimport * as NextImage from "next/image";
 
 const OriginalNextImage = NextImage.default;
 
