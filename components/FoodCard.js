@@ -5,12 +5,16 @@ import styled from "styled-components";
 export default function FoodCard({ recipe }) {
   return (
     <Card>
-      <Image src={recipe.image} height={200} width={100} alt={recipe.name} />
-      <p>{recipe.name}</p>
+      <RecipeName>{recipe.name}</RecipeName>
+      <Image src={recipe.image} height={300} width={200} alt={recipe.name} />
     </Card>
   );
 }
 
 const Card = styled.li`
   list-style: none;
+`;
+
+const RecipeName = styled.p`
+  font-style: italic;
 `;

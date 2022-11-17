@@ -1,20 +1,20 @@
 [
   {
     "id": 1,
-    "category": "Pasta",
-    "name": "pasta with Pesto",
-    "image": "/assets/images/pasta.jpg"
+    "category": "pizza",
+    "name": "pizza smoked chicken",
+    "image": "/../public/images/pizza.jpg"
   },
   {
     "id": 2,
     "category": "bred",
-    "name": "bred with Avocado",
-    "image": "/assets/images/bred.jpg"
+    "name": "bred with avocado",
+    "image": "/../public/images/bred.jpg"
   },
   {
     "id": 3,
     "category": "fish",
     "name": "salmon with zucchini",
-    "image": "/assets/images/salmon.jpg"
+    "image": "/../public/images/salmon.jpg"
   }
 ]
