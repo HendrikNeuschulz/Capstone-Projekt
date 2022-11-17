@@ -1,23 +1,16 @@
 import Image from "next/image";
+import Link from "next/link";
+import React from "react";
 import styled from "styled-components";
 import salmon from "../assets/images/salmon.jpg";
-import bred from "../assets/images/bred.jpg";
-import pasta from "../assets/images/pasta.jpg";
 
-function FoodCard(recipes) {
+export default function FoodCard({ data }) {
   return (
-    <>
-      <Card>
-        <Image width={400} src={salmon} alt="Salmon with Zucchini" />
-      </Card>
-      <Card>
-        <Image width={400} src={bred} alt="Bred with Avocado" />
-      </Card>
-    </>
+    <Card>
+      <Image src={salmon} width={200} alt="salmon with zucchini" />
+    </Card>
   );
 }
-
-export default FoodCard;
 
 const Card = styled.li`
   list-style: none;

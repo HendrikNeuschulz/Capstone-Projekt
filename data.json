@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "category": "Pasta",
+    "name": "Pasta with Pesto",
+    "pic": "../assets/images/bred.jpg"
+  },
+  {
+    "id": 2,
+    "category": "bred",
+    "name": "bred with Avocado"
+  },
+  {
+    "id": 3,
+    "category": "fisch",
+    "name": "salmon with zucchini"
+  }
+]
