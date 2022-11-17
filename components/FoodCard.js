@@ -1,13 +1,12 @@
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
-import salmon from "../assets/images/salmon.jpg";
 
-export default function FoodCard({ data }) {
+export default function FoodCard({ recipe }) {
   return (
     <Card>
-      <Image src={salmon} width={200} alt="salmon with zucchini" />
+      <Image src={recipe.image} height={200} width={100} alt={recipe.name} />
+      <p>{recipe.name}</p>
     </Card>
   );
 }

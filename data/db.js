@@ -1,7 +1,7 @@
-import events from "../data.json";
+import dishes from "../data.json";
 
-function getAllEvents() {
-  return events;
+function getAllDishes() {
+  return dishes;
 }
 
-export { getAllEvents };
+export { getAllDishes };

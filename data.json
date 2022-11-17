@@ -2,17 +2,19 @@
   {
     "id": 1,
     "category": "Pasta",
-    "name": "Pasta with Pesto",
-    "pic": "../assets/images/bred.jpg"
+    "name": "pasta with Pesto",
+    "image": "/assets/images/pasta.jpg"
   },
   {
     "id": 2,
     "category": "bred",
-    "name": "bred with Avocado"
+    "name": "bred with Avocado",
+    "image": "/assets/images/bred.jpg"
   },
   {
     "id": 3,
-    "category": "fisch",
-    "name": "salmon with zucchini"
+    "category": "fish",
+    "name": "salmon with zucchini",
+    "image": "/assets/images/salmon.jpg"
   }
 ]
