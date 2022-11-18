@@ -1,4 +1,3 @@
-import { resetClipboardStubOnView } from "@testing-library/user-event/dist/types/utils";
 import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
