@@ -8,6 +8,8 @@ export default function Home() {
 
   if (error) return <h1>There was an error</h1>;
 
+  if (!recipes) return <h1>recipes are loading</h1>;
+
   return (
     <main>
       <h1>WTF? What to food </h1>
