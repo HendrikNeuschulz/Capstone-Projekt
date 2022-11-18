@@ -10,7 +10,7 @@ export default function Home() {
 
   return (
     <main>
-      <h1>WTF? What to food</h1>
+      <h1>WTF? What to food </h1>
       <h2>my super tasty selection of recipes:</h2>
 
       <ul>
