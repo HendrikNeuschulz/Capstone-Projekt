@@ -3,18 +3,18 @@
     "id": 1,
     "category": "pizza",
     "name": "pizza smoked chicken",
-    "image": "/../public/images/pizza.jpg"
+    "image": "/images/pizza.jpg"
   },
   {
     "id": 2,
     "category": "bred",
     "name": "bred with avocado",
-    "image": "/../public/images/bred.jpg"
+    "image": "/images/bred.jpg"
   },
   {
     "id": 3,
     "category": "fish",
     "name": "salmon with zucchini",
-    "image": "/../public/images/salmon.jpg"
+    "image": "/images/salmon.jpg"
   }
 ]
