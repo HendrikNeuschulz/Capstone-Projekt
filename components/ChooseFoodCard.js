@@ -3,26 +3,38 @@ import React from "react";
 import styled from "styled-components";
 import Link from "next/link";
 
-export default function FoodCard({ recipe }) {
+export default function ChooseFoodCard({ onAddRecipesToFavourites, onFindRandomRecipe }) {
+  const recipe = onFindRandomRecipe();
   return (
-    <>
-      <Card>
-        <StyledImage src={recipe?.image} alt={recipe?.name} width={300} height={350} />
-      </Card>
-
-      <NoDeliciousLink href="/">arghh no</NoDeliciousLink>
-      <DeliciousLink href="/">delicious</DeliciousLink>
-    </>
+    <Card>
+      {recipe && (
+        <>
+          <img src={recipe.image} alt={recipe.name} width={300} height={350} />
+          <NoDeliciousButton type="button" onClick={onFindRandomRecipe}>
+            disgusting
+          </NoDeliciousButton>
+          <DeliciousButton
+            type="button"
+            onClick={() => {
+              onAddRecipesToFavourites(recipe.id);
+              onFindRandomRecipe();
+            }}
+          >
+            delicious
+          </DeliciousButton>
+        </>
+      )}
+    </Card>
   );
 }
 
-const Card = styled.li`
+const Card = styled.article`
   list-style: none;
   margin: 10px;
   padding: 10px;
 `;
 
-const DeliciousLink = styled(Link)`
+const DeliciousButton = styled.button`
   align-items: center;
   background: lightgreen;
   border: 0 solid #e2e8f0;
@@ -49,7 +61,7 @@ const DeliciousLink = styled(Link)`
   left: 100px;
 `;
 
-const NoDeliciousLink = styled(Link)`
+const NoDeliciousButton = styled.button`
   align-items: center;
   background: red;
   border: 0 solid #e2e8f0;

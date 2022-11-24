@@ -1,25 +1,26 @@
 import styled from "styled-components";
 import FoodCard from "../components/FoodCard";
-import useSWR from "swr";
-import { fetcher } from "../helpers/api";
+import recipes from "../data.json";
 
-export default function Home() {
-  const { data: recipes, error } = useSWR("/api/recipes", fetcher);
-
-  if (error) return <h1>There was an error</h1>;
-
-  if (!recipes) return <h1>your tasty recipes loading ...</h1>;
+export default function Mealcenter({ favourites }) {
+  const favouriteRecipes = recipes.filter((recipe) => favourites.includes(recipe.id));
 
   return (
     <main>
       <h1>WTF? What to food </h1>
-      <h2>my super tasty selection of recipes:</h2>
+      {favouriteRecipes.length === 0 ? (
+        <p>Nothing here..</p>
+      ) : (
+        <>
+          <h2>my super tasty selection of recipes:</h2>
+          <ul>
+            {favouriteRecipes.map((recipe) => (
+              <FoodCard recipe={recipe} key={recipe.id} />
+            ))}
+          </ul>
+        </>
+      )}
 
-      <ul>
-        {recipes?.map((recipe) => (
-          <FoodCard recipe={recipe} key={recipe.id} />
-        ))}
-      </ul>
       <SytledNav>
         <StyledImgBox href="/">
           <img src="/icons/iconHome.png" />
