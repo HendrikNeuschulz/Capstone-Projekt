@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import GlobalStyles from "../components/GlobalStyles";
-import recipes from "../flattened-download.json";
+import recipes from "../recipedata.json";
 import { useLocalStorage } from "../helpers/hooks";
 
 function MyApp({ Component, pageProps }) {

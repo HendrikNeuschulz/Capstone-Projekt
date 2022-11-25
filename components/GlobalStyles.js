@@ -3,9 +3,7 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyles = createGlobalStyle`
     html,
     body {
-        display: flex;
-        justify-content: center;
-       
+      
         padding: 0;
         margin: 0;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -17,16 +15,7 @@ const GlobalStyles = createGlobalStyle`
 
     }
 
-    h1 {
-        display: fixed;
-        justify-content: center;
-    }
-
-    h2 {
-        display: fixed;
-        justify-content: center;
-        
-    }
+ 
 
     
 `;

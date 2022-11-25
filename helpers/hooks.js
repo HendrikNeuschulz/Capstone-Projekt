@@ -22,9 +22,7 @@ export function useLocalStorage(key, initialState) {
       setState((previousValue) => {
         // The value might be a callback with the previousValue
         const nextValue =
-          typeof callbackOrValue === "function"
-            ? callbackOrValue(previousValue)
-            : callbackOrValue;
+          typeof callbackOrValue === "function" ? callbackOrValue(previousValue) : callbackOrValue;
         // Set the localStorage here (inside the original setter)
         window.localStorage.setItem(key, JSON.stringify(nextValue));
         return nextValue;

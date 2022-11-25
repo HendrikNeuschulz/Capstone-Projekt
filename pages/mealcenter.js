@@ -1,18 +1,19 @@
 import styled from "styled-components";
 import FoodCard from "../components/FoodCard";
-import recipes from "../flattened-download.json";
+import recipes from "../recipedata.json";
+import Navbar from "../components/Navbar";
 
 export default function Mealcenter({ favourites }) {
   const favouriteRecipes = recipes.filter((recipe) => favourites.includes(recipe.id));
 
   return (
     <main>
-      <h1>WTF? What to food</h1>
+      <Headline>WTF? What to food</Headline>
       {favouriteRecipes.length === 0 ? (
         <p>Nothing here..</p>
       ) : (
         <>
-          <h2>my super tasty selection of recipes:</h2>
+          <Subline>my super tasty selection of recipes:</Subline>
           <ul>
             {favouriteRecipes.map((recipe) => (
               <FoodCard recipe={recipe} key={recipe.id} />
@@ -20,33 +21,20 @@ export default function Mealcenter({ favourites }) {
           </ul>
         </>
       )}
-
-      <SytledNav>
-        <StyledImgBox href="/">
-          <img src="/icons/iconHome.png" />
-        </StyledImgBox>
-        <StyledImgBox href="/mealcenter">
-          <img src="/icons/iconMealCenter.png" />
-        </StyledImgBox>
-      </SytledNav>
+      <Navbar />
     </main>
   );
 }
 
-const SytledNav = styled.nav`
-  border: 1px solid black;
-  border-radius: 10px;
-
-  display: flex;
-  justify-content: center;
-  width: 70%;
-  position: fixed;
-  left: 60px;
-  bottom: 5px;
-  background-color: #d9d1ce;
+const StyledImgBox = styled.a`
+  text-align: center;
 `;
 
-const StyledImgBox = styled.a`
-  position: relative;
-  right: 80px;
+const Headline = styled.h1`
+  text-align: center;
+`;
+
+const Subline = styled.h2`
+  text-align: center;
+  font-size: 18px;
 `;

@@ -1,47 +1,31 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import ChooseFoodCard from "../components/ChooseFoodCard";
+import Navbar from "../components/Navbar";
 
 function Home({ nextRecipe, onAddRecipesToFavourites, onFindRandomRecipe }) {
   return (
     <main>
-      <h1>WTF? What to food </h1>
-      <h2>what are you up for?</h2>
+      <Headline>WTF? What to food </Headline>
+      <Subline>what are you up for?</Subline>
 
       <ChooseFoodCard
         recipe={nextRecipe}
         onAddRecipesToFavourites={onAddRecipesToFavourites}
         onNextRecipe={onFindRandomRecipe}
       />
-
-      <SytledNav>
-        <StyledImgBox href="/">
-          <img src="/icons/iconHome.png" />
-        </StyledImgBox>
-        <StyledImgBox href="/mealcenter">
-          <img src="/icons/iconMealCenter.png" />
-        </StyledImgBox>
-      </SytledNav>
+      <Navbar />
     </main>
   );
 }
 
 export default Home;
 
-const SytledNav = styled.nav`
-  border: 1px solid black;
-  border-radius: 10px;
-
-  display: flex;
-  justify-content: center;
-  width: 70%;
-  position: fixed;
-  left: 60px;
-  bottom: 5px;
-  background-color: #d9d1ce;
+const Headline = styled.h1`
+  text-align: center;
 `;
 
-const StyledImgBox = styled.a`
-  position: relative;
-  right: 80px;
+const Subline = styled.h2`
+  text-align: center;
+  font-size: 18px;
 `;

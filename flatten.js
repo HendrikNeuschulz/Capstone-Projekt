@@ -1,8 +1,3 @@
-//https://www.themealdb.com/api/json/v1/1/search.php?f=b
-//von jedem api anfragebums ergebnis in download.json im array anhängen
-//node flatten.js > flattened-download.json
-//erzeugt flattened-download.json
-
 console.log(
   JSON.stringify(
     require("./download.json")
