@@ -18,13 +18,14 @@ const GlobalStyles = createGlobalStyle`
     }
 
     h1 {
-        display: flex;
+        display: fixed;
         justify-content: center;
     }
 
     h2 {
-        display: flex;
-        justify-content: center; 
+        display: fixed;
+        justify-content: center;
+        
     }
 
     

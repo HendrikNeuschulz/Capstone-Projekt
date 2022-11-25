@@ -3,7 +3,6 @@ import React from "react";
 import styled from "styled-components";
 
 export default function ChooseFoodCard({ recipe, onAddRecipesToFavourites, onNextRecipe }) {
-  console.log(recipe);
   return (
     <Card>
       {recipe && (

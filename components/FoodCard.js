@@ -19,13 +19,13 @@ const Card = styled.li`
 
 const RecipeName = styled.p`
   font-style: italic;
-  display: flex;
-  justify-content: center;
+  position: relative;
+  text-align: center;
 `;
 
 const StyledImage = styled(Image)`
   box-shadow: 10px 3px 10px #4c4a59;
   border: 2px solid #4c4a59;
   position: relative;
-  left: 55px;
+  left: 40px;
 `;

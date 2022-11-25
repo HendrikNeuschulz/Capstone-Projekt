@@ -7,7 +7,7 @@ export default function Mealcenter({ favourites }) {
 
   return (
     <main>
-      <h1>WTF? What to food </h1>
+      <h1>WTF? What to food</h1>
       {favouriteRecipes.length === 0 ? (
         <p>Nothing here..</p>
       ) : (

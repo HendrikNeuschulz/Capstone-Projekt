@@ -6,10 +6,9 @@ import { useLocalStorage } from "../helpers/hooks";
 function MyApp({ Component, pageProps }) {
   const [nextRecipe, setNextRecipe] = useState({});
   const [favourites, setFavourites] = useLocalStorage("favouriteRecipes", []);
-  //const [recipes, setRecipes] = useLocalStorage("allRecipes", recipes);
 
   useEffect(() => {
-    setNextRecipe(findRandomRecipe());
+    findRandomRecipe();
   }, [favourites]);
 
   function addRecipesToFavourites(recipeId) {
@@ -18,8 +17,8 @@ function MyApp({ Component, pageProps }) {
 
   function findRandomRecipe() {
     const filteredRecipes = recipes.filter((recipe) => !favourites.includes(recipe.id));
-    console.log(filteredRecipes);
-    return filteredRecipes[Math.floor(Math.random() * filteredRecipes.length)];
+
+    return setNextRecipe(filteredRecipes[Math.floor(Math.random() * filteredRecipes.length)]);
   }
 
   return (
