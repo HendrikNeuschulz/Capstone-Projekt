@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import FoodCard from "../components/FoodCard";
-import recipes from "../data.json";
+import recipes from "../flattened-download.json";
 
 export default function Mealcenter({ favourites }) {
   const favouriteRecipes = recipes.filter((recipe) => favourites.includes(recipe.id));

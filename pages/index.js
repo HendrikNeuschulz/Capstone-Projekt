@@ -1,15 +1,17 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import ChooseFoodCard from "../components/ChooseFoodCard";
 
-function Home({ onAddRecipesToFavourites, onFindRandomRecipe }) {
+function Home({ nextRecipe, onAddRecipesToFavourites, onFindRandomRecipe }) {
   return (
     <main>
       <h1>WTF? What to food </h1>
       <h2>what are you up for?</h2>
 
       <ChooseFoodCard
+        recipe={nextRecipe}
         onAddRecipesToFavourites={onAddRecipesToFavourites}
-        onFindRandomRecipe={onFindRandomRecipe}
+        onNextRecipe={onFindRandomRecipe}
       />
 
       <SytledNav>
