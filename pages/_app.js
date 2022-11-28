@@ -4,12 +4,12 @@ import recipes from "../recipedata.json";
 import { useLocalStorage } from "../helpers/hooks";
 
 function MyApp({ Component, pageProps }) {
-  const [nextRecipe, setNextRecipe] = useState({});
+  const [nextRecipe, setNextRecipe] = useState(null);
   const [favourites, setFavourites] = useLocalStorage("favouriteRecipes", []);
 
   useEffect(() => {
     findRandomRecipe();
-  }, [favourites]);
+  }, []);
 
   function addRecipesToFavourites(recipeId) {
     setFavourites((previousFavourites) => [...previousFavourites, recipeId]);
