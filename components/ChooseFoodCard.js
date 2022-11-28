@@ -18,7 +18,6 @@ export default function ChooseFoodCard({ recipe, onAddRecipesToFavourites, onNex
               type="button"
               onClick={() => {
                 onAddRecipesToFavourites(recipe.id);
-                onNextRecipe();
               }}
             >
               delicious

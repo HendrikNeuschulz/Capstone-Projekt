@@ -13,6 +13,7 @@ function MyApp({ Component, pageProps }) {
 
   function addRecipesToFavourites(recipeId) {
     setFavourites((previousFavourites) => [...previousFavourites, recipeId]);
+    findRandomRecipe();
   }
 
   function findRandomRecipe() {
