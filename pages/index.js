@@ -1,25 +1,31 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
-import FoodCard from "../components/FoodCard";
-import useSWR from "swr";
-import { fetcher } from "../helpers/api";
+import ChooseFoodCard from "../components/ChooseFoodCard";
+import Navbar from "../components/Navbar";
 
-export default function Home() {
-  const { data: recipes, error } = useSWR("/api/recipes", fetcher);
-
-  if (error) return <h1>There was an error</h1>;
-
-  if (!recipes) return <h1>your tasty recipes loading ...</h1>;
-
+function Home({ nextRecipe, onAddRecipesToFavourites, onFindRandomRecipe }) {
   return (
     <main>
-      <h1>WTF? What to food </h1>
-      <h2>my super tasty selection of recipes:</h2>
+      <Headline>WTF? What to food </Headline>
+      <Subline>what are you up for?</Subline>
 
-      <ul>
-        {recipes?.map((recipe) => (
-          <FoodCard recipe={recipe} key={recipe.id} />
-        ))}
-      </ul>
+      <ChooseFoodCard
+        recipe={nextRecipe}
+        onAddRecipesToFavourites={onAddRecipesToFavourites}
+        onNextRecipe={onFindRandomRecipe}
+      />
+      <Navbar />
     </main>
   );
 }
+
+export default Home;
+
+const Headline = styled.h1`
+  text-align: center;
+`;
+
+const Subline = styled.h2`
+  text-align: center;
+  font-size: 18px;
+`;
