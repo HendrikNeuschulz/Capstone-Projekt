@@ -11,7 +11,9 @@ export default function FoodCard({ recipe }) {
           <RecipeName>{recipe.name}</RecipeName>
         </StyledNameContainer>
         <StyledCardContainer>
-          <StyledImage src={recipe.image} alt={recipe.name} width={250} height={300} />
+          <Link href={`/recipes/${recipe.id}`}>
+            <StyledImage src={recipe.image} alt={recipe.name} width={250} height={300} />
+          </Link>
         </StyledCardContainer>
       </Card>
     </>
