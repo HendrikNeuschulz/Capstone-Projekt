@@ -2,15 +2,29 @@ import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 function Navbar() {
+  const router = useRouter();
   return (
     <SytledNav>
       <Link href="/">
-        <Image width={45} height={45} src="/icons/iconHome.png" alt="Homebutton" />
+        <StyledImage
+          className={router.pathname == "/" ? "active" : ""}
+          width={45}
+          height={45}
+          src="/icons/iconHome.png"
+          alt="Homebutton"
+        />
       </Link>
       <Link href="/mealcenter">
-        <Image width={45} height={45} src="/icons/iconMealCenter.png" alt="Mealcenterbutton" />
+        <StyledImage
+          className={router.pathname == "/mealcenter" ? "active" : ""}
+          width={45}
+          height={45}
+          src="/icons/iconMealCenter.png"
+          alt="Mealcenterbutton"
+        />
       </Link>
     </SytledNav>
   );
@@ -28,5 +42,12 @@ const SytledNav = styled.nav`
   position: fixed;
   bottom: 0;
   background-color: #d9d1ce;
-  gap: 20px;
+  gap: 20px; ;
+`;
+
+const StyledImage = styled(Image)`
+  &.active {
+    border: 2px solid black;
+    border-radius: 30px;
+  }
 `;
