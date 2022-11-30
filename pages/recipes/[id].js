@@ -92,8 +92,9 @@ const RecipeName = styled.p`
   width: 250px;
   padding: 30px;
   opacity: 0.8;
-  background-color: black;
-  color: white;
+  background-color: #e8e1d1;
+  color: black;
+  font-size: 30px;
 `;
 
 const StyledImage = styled(Image)`

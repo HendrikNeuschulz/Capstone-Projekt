@@ -52,8 +52,8 @@ const StyledNameContainer = styled.div`
   padding: 30px;
   opacity: 0.8;
 
-  background-color: black;
-  color: white;
+  background-color: #e8e1d1;
+  color: black;
 `;
 
 const RecipeName = styled.p`
