@@ -18,7 +18,6 @@ export default function ChooseFoodCard({ recipe, onAddRecipesToFavourites, onNex
               type="button"
               onClick={() => {
                 onAddRecipesToFavourites(recipe.id);
-                onNextRecipe();
               }}
             >
               delicious
@@ -44,6 +43,7 @@ const DeliciousButton = styled.button`
   background-color: #37ad47;
   width: 140px;
   cursor: pointer;
+  font-family: JosefinSans;
 `;
 
 const NoDeliciousButton = styled.button`
@@ -54,6 +54,7 @@ const NoDeliciousButton = styled.button`
   width: 140px;
   height: 60px;
   cursor: pointer;
+  font-family: JosefinSans;
 `;
 
 const StyledImage = styled(Image)`
