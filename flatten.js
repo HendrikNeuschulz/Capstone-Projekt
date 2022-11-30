@@ -8,6 +8,7 @@ console.log(
           strMeal,
           strCategory,
           strInstructions,
+          strMeasure,
           strMealThumb,
           strTags,
           strYoutube,
@@ -20,6 +21,11 @@ console.log(
           image: strMealThumb,
           tags: strTags?.split(","),
           youtube: strYoutube,
+          measure: Object.keys(recipe)
+            .filter((key) => key.startsWith("strMeasure"))
+            .map((key) => recipe[key])
+            .filter((measure) => measure !== "")
+            .filter((measure) => measure !== null),
           ingredients: Object.keys(recipe)
             .filter((key) => key.startsWith("strIngredient"))
             .map((key) => recipe[key])

@@ -1,13 +1,18 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
+@font-face {
+    font-family: "JosefinSans";
+    src: url("/fonts/JosefinSans-VariableFont_wght.ttf");
+       
+}
     html,
     body {
       
         padding: 0;
         margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-        background-color:#D9D1CE
+        font-family: "JosefinSans";
+        background-color: #edede9;
     }
 
     * {

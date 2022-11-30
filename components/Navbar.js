@@ -34,20 +34,20 @@ export default Navbar;
 
 const SytledNav = styled.nav`
   border: 1px solid black;
-  opacity: 0.9;
+  opacity: 0.8;
 
   display: flex;
   justify-content: center;
   width: 100%;
   position: fixed;
   bottom: 0;
-  background-color: #d9d1ce;
+  background-color: black;
   gap: 20px; ;
 `;
 
 const StyledImage = styled(Image)`
   &.active {
-    border: 2px solid black;
+    border: 2px solid #ff6e7f;
     border-radius: 30px;
   }
 `;
