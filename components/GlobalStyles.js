@@ -3,7 +3,7 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyles = createGlobalStyle`
 @font-face {
     font-family: "JosefinSans";
-    src: url("/fonts/JosefinSans-VariableFont_wght.ttf");
+    src: url("/fonts/Grace-Regular.ttf");
        
 }
     html,
@@ -12,7 +12,7 @@ const GlobalStyles = createGlobalStyle`
         padding: 0;
         margin: 0;
         font-family: "JosefinSans";
-        background-color: #edede9;
+        background-color: #e8e1d1;
     }
 
     * {

@@ -40,7 +40,7 @@ const DeliciousButton = styled.button`
   font-size: 24px;
   border: 1px solid black;
   border-radius: 5px;
-  background-color: #37ad47;
+  background-color: #3cb371;
   width: 140px;
   cursor: pointer;
   font-family: JosefinSans;
@@ -50,7 +50,7 @@ const NoDeliciousButton = styled.button`
   font-size: 24px;
   border: 1px solid black;
   border-radius: 5px;
-  background-color: #ff0000;
+  background-color: #ff6961;
   width: 140px;
   height: 60px;
   cursor: pointer;
@@ -80,6 +80,6 @@ const RecipeName = styled.p`
   width: 250px;
   padding: 30px;
   opacity: 0.8;
-  background-color: black;
-  color: white;
+  background-color: #e8e1d1;
+  color: black;
 `;
