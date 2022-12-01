@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import Link from "next/link";
 
-export default function FoodCard({ recipe }) {
+export default function FoodCard({ recipe, onDeleteRecipes }) {
   return (
     <>
       <Card>
@@ -14,6 +14,15 @@ export default function FoodCard({ recipe }) {
           <Link href={`/recipes/${recipe.id}`}>
             <StyledImage src={recipe.image} alt={recipe.name} width={300} height={350} />
           </Link>
+          <StyledDelete type="submit" onClick={() => onDeleteRecipes(recipe.id)}>
+            <Image
+              src={"/icons/iconDelete.png"}
+              height={30}
+              width={30}
+              alt="deletebutton
+            "
+            />
+          </StyledDelete>
         </StyledCardContainer>
       </Card>
     </>
@@ -59,4 +68,13 @@ const StyledNameContainer = styled.div`
 const RecipeName = styled.p`
   position: absolute;
   text-align: center;
+`;
+
+const StyledDelete = styled.button`
+  position: relative;
+  bottom: 50px;
+  left: 130px;
+  background-color: #e8e1d1;
+  opacity: 0.8;
+  box-shadow: 2px 2px 8px black;
 `;

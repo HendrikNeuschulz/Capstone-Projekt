@@ -22,6 +22,12 @@ function MyApp({ Component, pageProps }) {
     return setNextRecipe(filteredRecipes[Math.floor(Math.random() * filteredRecipes.length)]);
   }
 
+  function deleteRecipes(id) {
+    const afterDelete = favourites.filter((favouriteRecipe) => favouriteRecipe !== id);
+
+    setFavourites(afterDelete);
+  }
+
   return (
     <>
       <GlobalStyles />
@@ -31,6 +37,7 @@ function MyApp({ Component, pageProps }) {
         nextRecipe={nextRecipe}
         onAddRecipesToFavourites={addRecipesToFavourites}
         onFindRandomRecipe={findRandomRecipe}
+        onDeleteRecipes={deleteRecipes}
       />
     </>
   );
