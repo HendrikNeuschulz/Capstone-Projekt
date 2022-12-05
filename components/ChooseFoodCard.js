@@ -2,13 +2,23 @@ import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
 
-export default function ChooseFoodCard({ recipe, onAddRecipesToFavourites, onNextRecipe }) {
+export default function ChooseFoodCard({
+  recipe,
+  onAddRecipesToFavourites,
+  onNextRecipe,
+}) {
   return (
     <Card>
       {recipe && (
         <>
           <RecipeName>{recipe.name}</RecipeName>
-          <StyledImage priority src={recipe.image} alt={recipe.name} width={300} height={350} />
+          <StyledImage
+            priority
+            src={recipe.image}
+            alt={recipe.name}
+            width={300}
+            height={350}
+          />
 
           <StyledBtnContainer>
             <NoDeliciousButton type="button" onClick={onNextRecipe}>
@@ -20,7 +30,7 @@ export default function ChooseFoodCard({ recipe, onAddRecipesToFavourites, onNex
                 onAddRecipesToFavourites(recipe.id);
               }}
             >
-              xdelicious
+              delicious
             </DeliciousButton>
           </StyledBtnContainer>
         </>
@@ -67,6 +77,7 @@ const StyledBtnContainer = styled.div`
   justify-content: center;
   gap: 20px;
   margin-top: 20px;
+  font-weight: 200%;
 `;
 
 const RecipeName = styled.p`
