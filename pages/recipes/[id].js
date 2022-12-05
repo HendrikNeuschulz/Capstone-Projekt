@@ -47,7 +47,7 @@ export default function recipeDetailPage({ recipe }) {
         <br />
 
         <article>
-          need some help? get some with this <a href={recipeDetails?.youtube}>Video</a>
+          need some help? get some with this .. <a href={recipeDetails?.youtube}>Video</a>
         </article>
       </Main>
       <StyledBackLink href={"/mealcenter"}>
@@ -77,7 +77,7 @@ const FoodCardBox = styled.div`
   justify-content: center;
   align-items: center;
   margin: 10px;
-  margin-left: 40px;
+  
   padding: 10px;
 `;
 
@@ -85,12 +85,13 @@ const RecipeName = styled.p`
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  position: relative;
   border: 1px solid black;
-  box-shadow: 2px 3px 8px black;
+  box-shadow: 2px 3px 1px black;
   height: 60px;
   width: 250px;
-  padding: 30px;
+  padding: 38px;
+  left: 40px;
   opacity: 0.8;
   background-color: #e8e1d1;
   color: black;
@@ -98,10 +99,15 @@ const RecipeName = styled.p`
 `;
 
 const StyledImage = styled(Image)`
-  box-shadow: 5px 3px 10px 3px #4c4a59;
+  box-shadow: 5px 3px 3px #4c4a59;
   border: 2px solid #4c4a59;
 `;
 
 const StyledList = styled.ul`
   list-style: none;
+  position: relative;
+  text-align: center;
+  right: 20px;
+  
+  
 `;

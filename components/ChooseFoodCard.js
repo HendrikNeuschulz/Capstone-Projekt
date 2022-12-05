@@ -20,7 +20,7 @@ export default function ChooseFoodCard({ recipe, onAddRecipesToFavourites, onNex
                 onAddRecipesToFavourites(recipe.id);
               }}
             >
-              delicious
+              xdelicious
             </DeliciousButton>
           </StyledBtnContainer>
         </>
