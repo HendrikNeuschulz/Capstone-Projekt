@@ -37,12 +37,14 @@ export default function recipeDetailPage({ recipe }) {
             alt={recipeDetails?.name}
           />
         </FoodCardBox>
+        <StyledIngredientsHeadline>Ingredients:</StyledIngredientsHeadline>
         <StyledList>
           {ingredientMeasureList.map((item) => (
             <li key={item}>{item}</li>
           ))}
         </StyledList>
         <br />
+        <StyledInstructionHeadline>Instructions:</StyledInstructionHeadline>
         <article>{recipeDetails?.instructions}</article>
         <br />
 
@@ -119,7 +121,7 @@ const FoodCardBox = styled.div`
   padding: 10px;
 `;
 
-const RecipeName = styled.p`
+const RecipeName = styled.h1`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -154,4 +156,20 @@ const StyledComment = styled.svg`
   right: 12px;
   bottom: 13px;
   opacity: 0.8;
+`;
+
+const StyledIngredientsHeadline = styled.h2`
+  font-size: 20px;
+  font-weight: 900;
+  text-decoration: underline;
+  margin: auto;
+  padding: auto;
+`;
+
+const StyledInstructionHeadline = styled.h3`
+  font-size: 20px;
+  font-weight: 900;
+  text-decoration: underline;
+  margin: 15px;
+  padding: 10px;
 `;

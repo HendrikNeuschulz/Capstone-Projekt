@@ -1,19 +1,19 @@
 import Link from "next/link";
+import User from "../userdata.json";
 
-export default function CommentRecipe({ addComment }) {
+export default function CommentRecipe({ addComment, User, comment }) {
   function handleSubmit(event) {
     event.preventDefault();
     const formData = new FormData(event.target);
-    const { name, comment } = Object.fromEntries(formData);
-    addComment(comment, name);
+    const { comment } = Object.fromEntries(formData);
+    addComment(comment);
     event.target.reset();
   }
 
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="name">name:</label>
-        <input type="text" name="name" placeholder="whats ur name?"></input>
+        <label htmlFor="name">Comment: </label>
         <input
           type="text"
           name="comment"
@@ -22,7 +22,6 @@ export default function CommentRecipe({ addComment }) {
         <button type="submit" variant="submit">
           Do it
         </button>
-        <li></li>
       </form>
 
       <Link href={"/mealcenter"}>

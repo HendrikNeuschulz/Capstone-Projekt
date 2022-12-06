@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import GlobalStyles from "../components/GlobalStyles";
 import recipes from "../recipedata.json";
 import { useLocalStorage } from "../helpers/hooks";
+import User from "../userdata.json";
 
 function MyApp({ Component, pageProps }) {
   const [nextRecipe, setNextRecipe] = useState(null);
@@ -11,6 +12,10 @@ function MyApp({ Component, pageProps }) {
   useEffect(() => {
     findRandomRecipe();
   }, []);
+
+  function addComment(comment) {
+    setComment((previousComments) => [...previousComments, comment]);
+  }
 
   function addRecipesToFavourites(recipeId) {
     setFavourites((previousFavourites) => [...previousFavourites, recipeId]);
@@ -47,6 +52,7 @@ function MyApp({ Component, pageProps }) {
         onDeleteRecipes={deleteRecipes}
         comment={comment}
         onSetComment={setComment}
+        onAddComment={addComment}
       />
     </>
   );

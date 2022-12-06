@@ -8,7 +8,7 @@ export default function FoodCard({ recipe, onDeleteRecipes }) {
     <>
       <Card>
         <StyledNameContainer>
-          <RecipeName>{recipe.name}</RecipeName>
+          <h3>{recipe.name}</h3>
         </StyledNameContainer>
         <StyledCardContainer>
           <Link href={`/recipes/${recipe.id}`}>
@@ -53,14 +53,16 @@ export default function FoodCard({ recipe, onDeleteRecipes }) {
   );
 }
 
-const Card = styled.li`
-  list-style: none;
+const Card = styled.article`
+  position: relative;
+  margin: auto;
+  padding: 10px;
+  width: fit-content;
 `;
 
 const StyledImage = styled(Image)`
-  box-shadow: 2px 3px 10px #4c4a59;
+  box-shadow: 5px 3px 10px 3px #4c4a59;
   border: 2px solid #4c4a59;
-  margin: 10px;
 `;
 
 const StyledCardContainer = styled.div`
@@ -75,23 +77,20 @@ const StyledCardContainer = styled.div`
 
 const StyledNameContainer = styled.div`
   display: flex;
+  text-align: center;
   justify-content: center;
   align-items: center;
   position: absolute;
   border: 1px solid black;
   box-shadow: 2px 3px 8px black;
-  height: 45px;
-  width: 220px;
-  padding: 30px;
+  height: 60px;
+  width: 250px;
+  padding: auto;
   opacity: 0.8;
-
   background-color: #e8e1d1;
   color: black;
-`;
-
-const RecipeName = styled.p`
-  position: absolute;
-  text-align: center;
+  top: 0;
+  left: 0;
 `;
 
 const StyledDelete = styled.button`

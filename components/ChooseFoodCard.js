@@ -88,7 +88,7 @@ const RecipeNameContainer = styled.div`
   box-shadow: 2px 3px 8px black;
   height: 60px;
   width: 250px;
-  padding: 15px;
+  padding: auto;
   opacity: 0.8;
   background-color: #e8e1d1;
   color: black;
