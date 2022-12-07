@@ -49,7 +49,7 @@ export default function recipeDetailPage({ recipe }) {
         <br />
 
         <article>
-          need some help? get some with this ..{" "}
+          need some help? get some with this ...{" "}
           <a href={recipeDetails?.youtube}>Video</a>
         </article>
       </Main>
