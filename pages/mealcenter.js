@@ -4,11 +4,13 @@ import recipes from "../recipedata.json";
 import Navbar from "../components/Navbar";
 
 export default function Mealcenter({ favourites, onDeleteRecipes }) {
-  const favouriteRecipes = recipes.filter((recipe) => favourites.includes(recipe.id));
+  const favouriteRecipes = recipes.filter((recipe) =>
+    favourites.includes(recipe.id)
+  );
 
   return (
     <main>
-      <Headline>WTF? What to food</Headline>
+      <Headline>WTF? What to food ..</Headline>
       {favouriteRecipes.length === 0 ? (
         <p>Nothing here ¯\_(ツ)_/¯..</p>
       ) : (
@@ -16,7 +18,11 @@ export default function Mealcenter({ favourites, onDeleteRecipes }) {
           <Subline>my super tasty selection of recipes:</Subline>
           <ul>
             {favouriteRecipes.map((recipe) => (
-              <FoodCard recipe={recipe} key={recipe.id} onDeleteRecipes={onDeleteRecipes} />
+              <FoodCard
+                recipe={recipe}
+                key={recipe.id}
+                onDeleteRecipes={onDeleteRecipes}
+              />
             ))}
           </ul>
         </>
