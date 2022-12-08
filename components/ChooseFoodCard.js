@@ -2,26 +2,43 @@ import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
 
-export default function ChooseFoodCard({ recipe, onAddRecipesToFavourites, onNextRecipe }) {
+export default function ChooseFoodCard({
+  recipe,
+  onAddRecipesToFavourites,
+  onNextRecipe,
+}) {
   return (
     <Card>
       {recipe && (
         <>
-          <RecipeName>{recipe.name}</RecipeName>
-          <StyledImage priority src={recipe.image} alt={recipe.name} width={300} height={350} />
+          <RecipeNameContainer>
+            <h3>{recipe.name}</h3>
+          </RecipeNameContainer>
+          <StyledImage
+            priority
+            src={recipe.image}
+            alt={recipe.name}
+            width={300}
+            height={350}
+          />
 
           <StyledBtnContainer>
-            <NoDeliciousButton type="button" onClick={onNextRecipe}>
-              disgusting
-            </NoDeliciousButton>
-            <DeliciousButton
+            <StyledButton
               type="button"
+              variant="disgusting"
+              onClick={onNextRecipe}
+            >
+              disgusting
+            </StyledButton>
+            <StyledButton
+              type="button"
+              variant="delicious"
               onClick={() => {
                 onAddRecipesToFavourites(recipe.id);
               }}
             >
               delicious
-            </DeliciousButton>
+            </StyledButton>
           </StyledBtnContainer>
         </>
       )}
@@ -30,35 +47,27 @@ export default function ChooseFoodCard({ recipe, onAddRecipesToFavourites, onNex
 }
 
 const Card = styled.article`
-  list-style: none;
-  margin: 10px;
+  position: relative;
+  margin: auto;
   padding: 10px;
-  text-align: center;
+  width: fit-content;
 `;
 
-const DeliciousButton = styled.button`
+const StyledButton = styled.button`
   font-size: 24px;
   border: 1px solid black;
   border-radius: 5px;
-  background-color: #3cb371;
-  width: 140px;
-  cursor: pointer;
-  font-family: JosefinSans;
-`;
-
-const NoDeliciousButton = styled.button`
-  font-size: 24px;
-  border: 1px solid black;
-  border-radius: 5px;
-  background-color: #ff6961;
   width: 140px;
   height: 60px;
   cursor: pointer;
-  font-family: JosefinSans;
+  font-family: "oswald";
+  //font-weight: bold;
+  ${({ variant }) => variant === "delicious" && "background-color: #3cb371;"}
+  ${({ variant }) => variant === "disgusting" && "background-color: #ff6961;"}
 `;
 
 const StyledImage = styled(Image)`
-  box-shadow: 5px 3px 10px 3px #4c4a59;
+  box-shadow: 2px 3px 8px black;
   border: 2px solid #4c4a59;
 `;
 
@@ -67,10 +76,12 @@ const StyledBtnContainer = styled.div`
   justify-content: center;
   gap: 20px;
   margin-top: 20px;
+  font-weight: 200%;
 `;
 
-const RecipeName = styled.p`
+const RecipeNameContainer = styled.div`
   display: flex;
+  text-align: center;
   justify-content: center;
   align-items: center;
   position: absolute;
@@ -78,8 +89,10 @@ const RecipeName = styled.p`
   box-shadow: 2px 3px 8px black;
   height: 60px;
   width: 250px;
-  padding: 30px;
+  padding: auto;
   opacity: 0.8;
-  background-color: #e8e1d1;
+  background-color: #ccc3ad;
   color: black;
+  top: 0;
+  left: 0;
 `;
