@@ -7,36 +7,26 @@
   {
     "id": "2",
     "name": "Gustav",
-    "image": "",
-    "comment": "nice recipe, I liked it very much",
-    "commenttwo": "arghhh, that was really disgusting"
+    "image": ""
   },
   {
     "id": "3",
     "name": "Hildegard",
-    "image": "",
-    "comment": "What a wild recipe. It tastes incredibly good",
-    "commenttwo": "in itself it was delicious, but next time like more salt"
+    "image": ""
   },
   {
     "id": "4",
     "name": "Bernd-Jürgen",
-    "image": "",
-    "comment": "I would like to eat this again",
-    "commenttwo": "do you want to poison me"
+    "image": ""
   },
   {
     "id": "5",
     "name": "Carola",
-    "image": "",
-    "comment": "please more of such great food",
-    "commenttwo": "recipe is good, implementation was shitty"
+    "image": ""
   },
   {
     "id": "6",
     "name": "Karsten",
-    "image": "",
-    "comment": "tried everything and still lost",
-    "commenttwo": "next time we better order food"
+    "image": ""
   }
 ]

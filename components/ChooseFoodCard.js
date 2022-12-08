@@ -60,13 +60,14 @@ const StyledButton = styled.button`
   width: 140px;
   height: 60px;
   cursor: pointer;
-  font-family: JosefinSans;
+  font-family: "oswald";
+  //font-weight: bold;
   ${({ variant }) => variant === "delicious" && "background-color: #3cb371;"}
   ${({ variant }) => variant === "disgusting" && "background-color: #ff6961;"}
 `;
 
 const StyledImage = styled(Image)`
-  box-shadow: 5px 3px 10px 3px #4c4a59;
+  box-shadow: 2px 3px 8px black;
   border: 2px solid #4c4a59;
 `;
 
@@ -90,7 +91,7 @@ const RecipeNameContainer = styled.div`
   width: 250px;
   padding: auto;
   opacity: 0.8;
-  background-color: #e8e1d1;
+  background-color: #ccc3ad;
   color: black;
   top: 0;
   left: 0;

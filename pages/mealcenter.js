@@ -10,12 +10,12 @@ export default function Mealcenter({ favourites, onDeleteRecipes }) {
 
   return (
     <main>
-      <Headline>WTF? What to food ..</Headline>
+      <Headline>WTF? What to food</Headline>
       {favouriteRecipes.length === 0 ? (
         <p>Nothing here ¯\_(ツ)_/¯..</p>
       ) : (
         <>
-          <Subline>my super tasty selection of recipes:</Subline>
+          <Subline>My super tasty selection of recipes:</Subline>
           <ul>
             {favouriteRecipes.map((recipe) => (
               <FoodCard
@@ -32,15 +32,18 @@ export default function Mealcenter({ favourites, onDeleteRecipes }) {
   );
 }
 
-const StyledImgBox = styled.a`
-  text-align: center;
-`;
-
 const Headline = styled.h1`
   text-align: center;
+  font-size: 40px;
+  position: relative;
+  left: 40px;
+  font-family: oswald;
 `;
 
 const Subline = styled.h2`
   text-align: center;
-  font-size: 18px;
+  position: relative;
+  left: 40px;
+  font-size: 22px;
+  margin: 10px;
 `;

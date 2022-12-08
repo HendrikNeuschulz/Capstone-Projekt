@@ -13,9 +13,9 @@ function Navbar() {
           className={router.pathname == "/" ? "active" : "unactive"}
           id="Capa_1"
           enable-background="new 0 0 511.999 511.999"
-          height="48"
+          height="60"
           viewBox="0 0 511.999 511.999"
-          width="48"
+          width="60"
           xmlns="http://www.w3.org/2000/svg"
         >
           <g>
@@ -110,9 +110,9 @@ function Navbar() {
           className={router.pathname == "/mealcenter" ? "active" : "unactive"}
           id="Capa_1"
           enable-background="new 0 0 512 512"
-          height="48"
+          height="60"
           viewBox="0 0 512 512"
-          width="48"
+          width="60"
           xmlns="http://www.w3.org/2000/svg"
         >
           <g>
@@ -167,24 +167,27 @@ function Navbar() {
 export default Navbar;
 
 const SytledNav = styled.nav`
-  border-top: 1px solid black;
-  border-radius: 5px;
   display: flex;
   justify-content: center;
   width: 100%;
   position: fixed;
   bottom: 0;
-  background-color: #e8e1d1;
-  gap: 20px;
+  padding: 5px;
+  background-color: #ccc3ad;
+  gap: 30px;
+  height: 10%;
 `;
 
 const StyledImage = styled.svg`
-  padding: 7px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   &.active {
     opacity: 1;
-    transform: scale(1.2);
   }
   &.unactive {
-    opacity: 0.6;
+    opacity: 0.3;
   }
 `;

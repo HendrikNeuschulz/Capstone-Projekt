@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
 import Link from "next/link";
+import CommentRecipe from "./CommentForm";
 
 export default function FoodCard({ recipe, onDeleteRecipes }) {
   return (
@@ -61,7 +62,7 @@ const Card = styled.article`
 `;
 
 const StyledImage = styled(Image)`
-  box-shadow: 5px 3px 10px 3px #4c4a59;
+  box-shadow: 2px 3px 8px black;
   border: 2px solid #4c4a59;
 `;
 
@@ -86,8 +87,8 @@ const StyledNameContainer = styled.div`
   height: 60px;
   width: 250px;
   padding: auto;
-  opacity: 0.8;
-  background-color: #e8e1d1;
+  opacity: 0.9;
+  background-color: #ccc3ad;
   color: black;
   top: 0;
   left: 0;
@@ -95,9 +96,9 @@ const StyledNameContainer = styled.div`
 
 const StyledDelete = styled.button`
   position: relative;
-  bottom: 40px;
-  left: 135px;
-  background-color: #e8e1d1;
-  opacity: 1;
-  box-shadow: 2px 2px 8px black;
+  bottom: 45px;
+  left: 140px;
+  background-color: #ccc3ad;
+  margin: 10px;
+  padding: 8px;
 `;

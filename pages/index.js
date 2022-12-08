@@ -7,7 +7,7 @@ function Home({ nextRecipe, onAddRecipesToFavourites, onFindRandomRecipe }) {
   return (
     <main>
       <Headline>WTF? What to food </Headline>
-      <Subline>what are you up for?</Subline>
+      <Subline>What are you up for?</Subline>
 
       <ChooseFoodCard
         recipe={nextRecipe}
@@ -23,9 +23,11 @@ export default Home;
 
 const Headline = styled.h1`
   text-align: center;
+  font-family: "oswald";
 `;
 
 const Subline = styled.h2`
   text-align: center;
-  font-size: 18px;
+  font-size: 22px;
+  font-family: "Caveat";
 `;

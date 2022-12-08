@@ -2,19 +2,18 @@ import { useRouter } from "next/router";
 import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
-import recipes from "../../recipedata.json";
 
-export default function recipeDetailPage({ recipe }) {
+export default function recipeDetailPage({ recipes }) {
   const router = useRouter();
   const { id } = router.query;
 
   if (!id) return;
 
-  function getRecipesById(id) {
+  function getRecipeById(id) {
     return recipes.find((recipe) => recipe.id === id);
   }
 
-  const recipeDetails = getRecipesById(id);
+  const recipeDetails = getRecipeById(id);
 
   const ingredientMeasureList = [];
 
@@ -45,13 +44,12 @@ export default function recipeDetailPage({ recipe }) {
         </StyledList>
         <br />
         <StyledInstructionHeadline>Instructions:</StyledInstructionHeadline>
-        <article>{recipeDetails?.instructions}</article>
-        <br />
+        <StyledInstructions>{recipeDetails?.instructions}</StyledInstructions>
 
-        <article>
+        <StyledInstructions>
           need some help? get some with this ...{" "}
           <a href={recipeDetails?.youtube}>Video</a>
-        </article>
+        </StyledInstructions>
       </Main>
       <StyledBackLink href={"/mealcenter"}>
         <svg
@@ -78,7 +76,7 @@ export default function recipeDetailPage({ recipe }) {
           </g>
         </svg>
       </StyledBackLink>
-      <Link href={"/comments"}>
+      <Link href={`/recipes/${id}/comments`}>
         <StyledComment
           id="Layer"
           height="30"
@@ -106,7 +104,7 @@ const Main = styled.main`
 
 const StyledBackLink = styled(Link)`
   position: fixed;
-  left: 12px;
+  left: 25px;
   bottom: 10px;
   opacity: 0.8;
 `;
@@ -127,19 +125,19 @@ const RecipeName = styled.h1`
   align-items: center;
   position: relative;
   border: 1px solid black;
-  box-shadow: 2px 3px 1px black;
+  box-shadow: 2px 3px 8px black;
   height: 60px;
   width: 250px;
   padding: 38px;
   left: 40px;
   opacity: 0.8;
-  background-color: #e8e1d1;
+  background-color: #ccc3ad;
   color: black;
   font-size: 30px;
 `;
 
 const StyledImage = styled(Image)`
-  box-shadow: 5px 3px 3px #4c4a59;
+  box-shadow: 2px 3px 8px black;
   border: 2px solid #4c4a59;
 `;
 
@@ -148,13 +146,14 @@ const StyledList = styled.ul`
   position: relative;
   text-align: center;
   right: 20px;
+  margin-bottom: 10px;
 `;
 
 const StyledComment = styled.svg`
   color: #000;
   position: fixed;
-  right: 12px;
-  bottom: 13px;
+  right: 25px;
+  bottom: 17px;
   opacity: 0.8;
 `;
 
@@ -172,4 +171,9 @@ const StyledInstructionHeadline = styled.h3`
   text-decoration: underline;
   margin: 15px;
   padding: 10px;
+`;
+
+const StyledInstructions = styled.article`
+  margin-bottom: 20px;
+  padding: 15px;
 `;
