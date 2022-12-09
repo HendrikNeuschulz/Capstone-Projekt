@@ -2,9 +2,13 @@ import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
 import Link from "next/link";
-import CommentRecipe from "./CommentForm";
 
-export default function FoodCard({ recipe, onDeleteRecipes }) {
+export default function FoodCard({
+  recipe,
+  onRemoveRecipesFromFavourites,
+  onFindUserData,
+  currentUser,
+}) {
   return (
     <>
       <Card>
@@ -12,6 +16,22 @@ export default function FoodCard({ recipe, onDeleteRecipes }) {
           <h3>{recipe.name}</h3>
         </StyledNameContainer>
         <StyledCardContainer>
+          <LikedByContainer>
+            {recipe.likedBy.map((userId) => {
+              if (userId !== currentUser.id) {
+                const user = onFindUserData(userId);
+                return (
+                  <StyledUserIcon
+                    src={user.image}
+                    alt={`liked by ${user.name}`}
+                    key={user.id}
+                    width={40}
+                    height={40}
+                  />
+                );
+              }
+            })}
+          </LikedByContainer>
           <Link href={`/recipes/${recipe.id}`}>
             <StyledImage
               src={recipe.image}
@@ -22,7 +42,7 @@ export default function FoodCard({ recipe, onDeleteRecipes }) {
           </Link>
           <StyledDelete
             type="submit"
-            onClick={() => onDeleteRecipes(recipe.id)}
+            onClick={() => onRemoveRecipesFromFavourites(recipe.id)}
           >
             <svg
               height="20pt"
@@ -101,4 +121,20 @@ const StyledDelete = styled.button`
   background-color: #ccc3ad;
   margin: 10px;
   padding: 8px;
+`;
+
+const LikedByContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 10px;
+  bottom: 82px;
+  border: 1px solid black;
+  background-color: #ccc3ad;
+  box-shadow: 2px 2px 4px black;
+  height: 50px;
+`;
+
+const StyledUserIcon = styled.img`
+  gap: 10px;
 `;

@@ -6,16 +6,17 @@ import recipeData from "../recipedata.json";
 
 function MyApp({ Component, pageProps }) {
   const [nextRecipe, setNextRecipe] = useState(null);
-  const [favourites, setFavourites] = useLocalStorage("favouriteRecipes", [
+  /* const [favourites, setFavourites] = useLocalStorage("favouriteRecipes", [
     "52945",
     "52999",
-  ]);
+    "62871",
+  ]); */
   const [recipes, setRecipes] = useLocalStorage("recipes", recipeData);
   const currentUser = users[0];
 
   useEffect(() => {
     findRandomRecipe();
-  }, []);
+  }, [recipes]);
 
   function addComment(recipeId, comment) {
     const newComment = {
@@ -33,13 +34,18 @@ function MyApp({ Component, pageProps }) {
   }
 
   function addRecipesToFavourites(recipeId) {
-    setFavourites((previousFavourites) => [...previousFavourites, recipeId]);
-    findRandomRecipe();
+    setRecipes((previousRecipes) =>
+      previousRecipes.map((recipe) =>
+        recipeId === recipe.id
+          ? { ...recipe, likedBy: [...recipe.likedBy, currentUser.id] }
+          : recipe
+      )
+    );
   }
 
   function findRandomRecipe() {
     const filteredRecipes = recipes.filter(
-      (recipe) => !favourites.includes(recipe.id)
+      (recipe) => !recipe.likedBy.includes(currentUser.id)
     );
 
     return setNextRecipe(
@@ -47,12 +53,21 @@ function MyApp({ Component, pageProps }) {
     );
   }
 
-  function deleteRecipes(id) {
-    const afterDelete = favourites.filter(
-      (favouriteRecipe) => favouriteRecipe !== id
+  function removeRecipesFromFavourites(recipeId) {
+    const favouritesToUpdate = recipes.find(
+      (recipe) => recipe.id === recipeId
+    ).likedBy;
+    const updatetFavourites = favouritesToUpdate.filter(
+      (userId) => userId !== currentUser.id
     );
 
-    setFavourites(afterDelete);
+    setRecipes((previousRecipes) =>
+      previousRecipes.map((recipe) =>
+        recipeId === recipe.id
+          ? { ...recipe, likedBy: updatetFavourites }
+          : recipe
+      )
+    );
   }
 
   return (
@@ -60,11 +75,10 @@ function MyApp({ Component, pageProps }) {
       <GlobalStyles />
       <Component
         {...pageProps}
-        favourites={favourites}
         nextRecipe={nextRecipe}
         onAddRecipesToFavourites={addRecipesToFavourites}
         onFindRandomRecipe={findRandomRecipe}
-        onDeleteRecipes={deleteRecipes}
+        onRemoveRecipesFromFavourites={removeRecipesFromFavourites}
         recipes={recipes}
         currentUser={currentUser}
         onAddComment={addComment}

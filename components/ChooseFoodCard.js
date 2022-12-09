@@ -61,7 +61,7 @@ const StyledButton = styled.button`
   height: 60px;
   cursor: pointer;
   font-family: "oswald";
-  //font-weight: bold;
+
   ${({ variant }) => variant === "delicious" && "background-color: #3cb371;"}
   ${({ variant }) => variant === "disgusting" && "background-color: #ff6961;"}
 `;

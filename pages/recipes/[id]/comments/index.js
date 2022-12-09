@@ -26,14 +26,14 @@ export default function Comment({ recipes, onAddComment }) {
             const userData = findUserData(comment);
             return (
               <StyledComment key={comment.id}>
-                <h2>{userData.name}</h2>
-                <p>{comment.text}</p>
+                <StyledCommentName>{userData.name}</StyledCommentName>
+                <StyledCommentText>{comment.text}</StyledCommentText>
               </StyledComment>
             );
           })}
       </ul>
       <CommentForm onAddComment={onAddComment} recipeId={id} />
-      <Link href={`/recipes/${id}`}>
+      <StyledCommentBackLink href={`/recipes/${id}`}>
         <svg
           id="Layer_1"
           enable-background="new 0 0 64 64"
@@ -57,7 +57,7 @@ export default function Comment({ recipes, onAddComment }) {
             </g>
           </g>
         </svg>
-      </Link>
+      </StyledCommentBackLink>
     </>
   );
 }
@@ -72,4 +72,21 @@ const StyledComment = styled.li`
 
 const Headline = styled.h1`
   text-align: center;
+`;
+
+const StyledCommentName = styled.h2`
+  font-family: oswald;
+  font-size: 15px;
+  text-align: start;
+  margin: 10px;
+`;
+
+const StyledCommentText = styled.p`
+  font-weight: bold;
+`;
+
+const StyledCommentBackLink = styled(Link)`
+  position: fixed;
+  bottom: 20px;
+  left: 10px;
 `;
