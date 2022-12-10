@@ -17,33 +17,35 @@ export default function Mealcenter({
   }
 
   return (
-    <main>
-      <Headline>WTF? What to food</Headline>
-      {favouriteRecipes.length === 0 ? (
-        <p>Nothing here ¯\_(ツ)_/¯..</p>
-      ) : (
-        <>
-          <Subline>My super tasty selection of recipes:</Subline>
+    <>
+      <main>
+        <Headline>WTF? What to food</Headline>
+        {favouriteRecipes.length === 0 ? (
+          <p>Nothing here ¯\_(ツ)_/¯..</p>
+        ) : (
+          <>
+            <Subline>My super tasty selection of recipes:</Subline>
 
-          {favouriteRecipes.map((recipe) => (
-            <FoodCard
-              recipe={recipe}
-              key={recipe.id}
-              onRemoveRecipesFromFavourites={onRemoveRecipesFromFavourites}
-              currentUser={currentUser}
-              onFindUserData={findUserData}
-            />
-          ))}
-        </>
-      )}
+            {favouriteRecipes.map((recipe) => (
+              <FoodCard
+                recipe={recipe}
+                key={recipe.id}
+                onRemoveRecipesFromFavourites={onRemoveRecipesFromFavourites}
+                currentUser={currentUser}
+                onFindUserData={findUserData}
+              />
+            ))}
+          </>
+        )}
+      </main>
       <Navbar />
-    </main>
+    </>
   );
 }
 
 const Headline = styled.h1`
   text-align: center;
-  font-family: oswald;
+  font-family: "oswald";
 `;
 
 const Subline = styled.h2`
