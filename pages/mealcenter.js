@@ -24,17 +24,16 @@ export default function Mealcenter({
       ) : (
         <>
           <Subline>My super tasty selection of recipes:</Subline>
-          <StyledFavouriteList>
-            {favouriteRecipes.map((recipe) => (
-              <FoodCard
-                recipe={recipe}
-                key={recipe.id}
-                onRemoveRecipesFromFavourites={onRemoveRecipesFromFavourites}
-                currentUser={currentUser}
-                onFindUserData={findUserData}
-              />
-            ))}
-          </StyledFavouriteList>
+
+          {favouriteRecipes.map((recipe) => (
+            <FoodCard
+              recipe={recipe}
+              key={recipe.id}
+              onRemoveRecipesFromFavourites={onRemoveRecipesFromFavourites}
+              currentUser={currentUser}
+              onFindUserData={findUserData}
+            />
+          ))}
         </>
       )}
       <Navbar />
@@ -44,22 +43,11 @@ export default function Mealcenter({
 
 const Headline = styled.h1`
   text-align: center;
-  font-size: 40px;
-  position: relative;
-  left: 41px;
   font-family: oswald;
 `;
 
 const Subline = styled.h2`
   text-align: center;
-  position: relative;
-  left: 40px;
   font-size: 22px;
-  margin: 10px;
-`;
-
-const StyledFavouriteList = styled.ul`
-  position: relative;
-  display: flex;
-  flex-direction: column;
+  font-family: "Caveat";
 `;

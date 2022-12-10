@@ -14,9 +14,9 @@ function Navbar() {
             className={router.pathname == "/" ? "active" : "unactive"}
             id="Capa_1"
             enable-background="new 0 0 511.999 511.999"
-            height="60"
+            height="40"
             viewBox="0 0 511.999 511.999"
-            width="60"
+            width="40"
             xmlns="http://www.w3.org/2000/svg"
           >
             <g>
@@ -117,9 +117,9 @@ function Navbar() {
             className={router.pathname == "/mealcenter" ? "active" : "unactive"}
             id="Capa_1"
             enable-background="new 0 0 512 512"
-            height="60"
+            height="40"
             viewBox="0 0 512 512"
-            width="60"
+            width="40"
             xmlns="http://www.w3.org/2000/svg"
           >
             <g>
@@ -177,19 +177,15 @@ export default Navbar;
 const SytledNav = styled.nav`
   display: flex;
   justify-content: center;
-  width: 100%;
+  gap: 30px;
   position: fixed;
   bottom: 0;
-  padding: 5px;
-  background-color: #ccc3ad; //#ccc3ad
-  gap: 30px;
-  height: 10%;
+  width: 100%;
+  padding: 8px 0 2px 0;
+  background-color: #ccc3ad;
 `;
 
 const StyledImage = styled.svg`
-  display: flex;
-  justify-content: center;
-  align-items: center;
   */ &.active {
     opacity: 1;
   }

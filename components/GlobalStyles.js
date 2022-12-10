@@ -16,10 +16,10 @@ const GlobalStyles = createGlobalStyle`
     html,
     body {
       
-        padding: 0;
-        margin: 0;
         font-family: "Caveat";
         background-color:#e8e1d1;
+        padding: 0;
+        margin: 0;
         
     }
 
@@ -27,7 +27,11 @@ const GlobalStyles = createGlobalStyle`
         box-sizing: border-box;
 
     }
-
+    
+    main {
+        margin-bottom: 100px;
+       
+    }
  
 
     

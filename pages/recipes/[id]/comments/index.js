@@ -18,10 +18,10 @@ export default function Comment({ recipes, onAddComment }) {
   }
 
   return (
-    <>
+    <main>
       <Headline>Comment your Recipes</Headline>
       {recipeComments.length === 0 && <p>Nothing here ¯\_(ツ)_/¯..</p>}
-      <ul>
+      <CommentsList>
         {recipeComments &&
           recipeComments.map((comment) => {
             const userData = findUserData(comment);
@@ -38,7 +38,7 @@ export default function Comment({ recipes, onAddComment }) {
               </>
             );
           })}
-      </ul>
+      </CommentsList>
       <CommentForm onAddComment={onAddComment} recipeId={id} />
       <StyledCommentBackLink href={`/recipes/${id}`}>
         <svg
@@ -65,27 +65,30 @@ export default function Comment({ recipes, onAddComment }) {
           </g>
         </svg>
       </StyledCommentBackLink>
-    </>
+    </main>
   );
 }
 
-const StyledComment = styled.li`
-  border: 2px solid black;
-  text-align: center;
-  margin: 20px;
-  padding: auto;
-  list-style: none;
-`;
-
 const Headline = styled.h1`
   text-align: center;
+`;
+
+const CommentsList = styled.ul`
+  padding: 0;
+`;
+
+const StyledComment = styled.li`
+  list-style: none;
+  margin-bottom: 10px;
+  border: 2px solid black;
+  text-align: center;
+  padding: 0 5px;
 `;
 
 const StyledCommentName = styled.h2`
   font-family: oswald;
   font-size: 15px;
   text-align: start;
-  margin: 10px;
 `;
 
 const StyledCommentText = styled.p`
@@ -94,6 +97,6 @@ const StyledCommentText = styled.p`
 
 const StyledCommentBackLink = styled(Link)`
   position: fixed;
-  bottom: 20px;
-  left: 10px;
+  bottom: 0;
+  left: 6px;
 `;
