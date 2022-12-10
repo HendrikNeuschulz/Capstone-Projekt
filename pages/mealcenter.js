@@ -46,7 +46,7 @@ const Headline = styled.h1`
   text-align: center;
   font-size: 40px;
   position: relative;
-  left: 40px;
+  left: 41px;
   font-family: oswald;
 `;
 
