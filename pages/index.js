@@ -5,17 +5,19 @@ import Navbar from "../components/Navbar";
 
 function Home({ nextRecipe, onAddRecipesToFavourites, onFindRandomRecipe }) {
   return (
-    <main>
-      <Headline>WTF? What to food </Headline>
-      <Subline>What are you up for?</Subline>
+    <>
+      <main>
+        <Headline>WTF? What to food </Headline>
+        <Subline>What are you up for?</Subline>
 
-      <ChooseFoodCard
-        recipe={nextRecipe}
-        onAddRecipesToFavourites={onAddRecipesToFavourites}
-        onNextRecipe={onFindRandomRecipe}
-      />
+        <ChooseFoodCard
+          recipe={nextRecipe}
+          onAddRecipesToFavourites={onAddRecipesToFavourites}
+          onNextRecipe={onFindRandomRecipe}
+        />
+      </main>
       <Navbar />
-    </main>
+    </>
   );
 }
 

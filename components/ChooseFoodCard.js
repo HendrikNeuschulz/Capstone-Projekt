@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
 import { Card, RecipeNameContainer, StyledImage } from "./Card.styled.js";
@@ -49,7 +48,7 @@ export default function ChooseFoodCard({
 
 const StyledButton = styled.button`
   font-size: 24px;
-  /*  border: 1px solid black; */
+  border: 1px solid black;
   border-radius: 5px;
   width: 140px;
   height: 60px;

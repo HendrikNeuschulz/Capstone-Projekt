@@ -79,8 +79,9 @@ const CommentsList = styled.ul`
 
 const StyledComment = styled.li`
   list-style: none;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
   border: 2px solid black;
+  border-radius: 20px;
   text-align: center;
   padding: 0 5px;
 `;
@@ -93,6 +94,7 @@ const StyledCommentName = styled.h2`
 
 const StyledCommentText = styled.p`
   font-weight: bold;
+  font-family: oswald;
 `;
 
 const StyledCommentBackLink = styled(Link)`

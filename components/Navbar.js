@@ -186,7 +186,7 @@ const SytledNav = styled.nav`
 `;
 
 const StyledImage = styled.svg`
-  */ &.active {
+  &.active {
     opacity: 1;
   }
   &.unactive {

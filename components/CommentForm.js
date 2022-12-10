@@ -54,6 +54,7 @@ export default function CommentForm({ onAddComment, recipeId }) {
 
 const StyledForm = styled.form`
   text-align: center;
+  font-family: oswald;
 `;
 
 const StyledButton = styled.button`
