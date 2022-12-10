@@ -181,21 +181,19 @@ const SytledNav = styled.nav`
   position: fixed;
   bottom: 0;
   padding: 5px;
-  background-color: #ccc3ad;
+  background-color: #ccc3ad; //#ccc3ad
   gap: 30px;
   height: 10%;
 `;
 
 const StyledImage = styled.svg`
-  padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  /*   &.active {
+  */ &.active {
     opacity: 1;
   }
   &.unactive {
     opacity: 0.3;
-  } */
+  }
 `;

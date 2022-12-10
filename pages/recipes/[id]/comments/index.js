@@ -3,6 +3,7 @@ import styled from "styled-components";
 import CommentForm from "../../../../components/CommentForm";
 import { useRouter } from "next/router";
 import users from "../../../../userdata.json";
+import Image from "next/image";
 
 export default function Comment({ recipes, onAddComment }) {
   const router = useRouter();
@@ -25,10 +26,16 @@ export default function Comment({ recipes, onAddComment }) {
           recipeComments.map((comment) => {
             const userData = findUserData(comment);
             return (
-              <StyledComment key={comment.id}>
-                <StyledCommentName>{userData.name}</StyledCommentName>
-                <StyledCommentText>{comment.text}</StyledCommentText>
-              </StyledComment>
+              <>
+                <StyledComment key={comment.id}>
+                  <StyledCommentName>
+                    {" "}
+                    <Image src={userData.image} width={25} height={25} />
+                    {userData.name}
+                  </StyledCommentName>
+                  <StyledCommentText>{comment.text}</StyledCommentText>
+                </StyledComment>
+              </>
             );
           })}
       </ul>
