@@ -24,7 +24,7 @@ export default function FoodCard({
           height={350}
         />
       </Link>
-      {/* <StyledCardContainer> */}
+
       {recipe.likedBy.length > 1 && (
         <LikedByContainer>
           {recipe.likedBy.map((userId) => {
@@ -68,20 +68,9 @@ export default function FoodCard({
           />
         </svg>
       </StyledDelete>
-      {/* </StyledCardContainer> */}
     </Card>
   );
 }
-
-// const StyledCardContainer = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-//   margin: 10px;
-//   margin-right: 50px;
-//   padding: 10px;
-// `;
 
 const StyledDelete = styled.button`
   position: absolute;
