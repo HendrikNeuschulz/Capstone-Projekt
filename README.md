@@ -10,7 +10,7 @@ All selected recipes appear in the favourites list. In the favourites list, the 
 
 Users also have the option of adding comments to the recipes, e.g. tips for the next preparation.
 
-!(/images/wtf1.png)
+![](wtf1.png)
 
 ## Demo:
 
