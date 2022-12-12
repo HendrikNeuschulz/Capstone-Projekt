@@ -3,6 +3,7 @@ import styled from "styled-components";
 import CommentForm from "../../../../components/CommentForm";
 import { useRouter } from "next/router";
 import users from "../../../../userdata.json";
+import Image from "next/image";
 
 export default function Comment({ recipes, onAddComment }) {
   const router = useRouter();
@@ -17,23 +18,29 @@ export default function Comment({ recipes, onAddComment }) {
   }
 
   return (
-    <>
+    <main>
       <Headline>Comment your Recipes</Headline>
       {recipeComments.length === 0 && <p>Nothing here ¯\_(ツ)_/¯..</p>}
-      <ul>
+      <CommentsList>
         {recipeComments &&
           recipeComments.map((comment) => {
             const userData = findUserData(comment);
             return (
-              <StyledComment key={comment.id}>
-                <h2>{userData.name}</h2>
-                <p>{comment.text}</p>
-              </StyledComment>
+              <>
+                <StyledComment key={comment.id}>
+                  <StyledCommentName>
+                    {" "}
+                    <Image src={userData.image} width={25} height={25} />
+                    {userData.name}
+                  </StyledCommentName>
+                  <StyledCommentText>{comment.text}</StyledCommentText>
+                </StyledComment>
+              </>
             );
           })}
-      </ul>
+      </CommentsList>
       <CommentForm onAddComment={onAddComment} recipeId={id} />
-      <Link href={`/recipes/${id}`}>
+      <StyledCommentBackLink href={`/recipes/${id}`}>
         <svg
           id="Layer_1"
           enable-background="new 0 0 64 64"
@@ -57,19 +64,41 @@ export default function Comment({ recipes, onAddComment }) {
             </g>
           </g>
         </svg>
-      </Link>
-    </>
+      </StyledCommentBackLink>
+    </main>
   );
 }
 
-const StyledComment = styled.li`
-  border: 2px solid black;
-  text-align: center;
-  margin: 20px;
-  padding: auto;
-  list-style: none;
-`;
-
 const Headline = styled.h1`
   text-align: center;
+`;
+
+const CommentsList = styled.ul`
+  padding: 0;
+`;
+
+const StyledComment = styled.li`
+  list-style: none;
+  margin-bottom: 16px;
+  border: 2px solid black;
+  border-radius: 20px;
+  text-align: center;
+  padding: 0 5px;
+`;
+
+const StyledCommentName = styled.h2`
+  font-family: oswald;
+  font-size: 15px;
+  text-align: start;
+`;
+
+const StyledCommentText = styled.p`
+  font-weight: bold;
+  font-family: oswald;
+`;
+
+const StyledCommentBackLink = styled(Link)`
+  position: fixed;
+  bottom: 0;
+  left: 6px;
 `;

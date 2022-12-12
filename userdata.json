@@ -2,31 +2,31 @@
   {
     "id": "1",
     "name": "Hendrik",
-    "image": ""
+    "image": "/images/hendrik.png"
   },
   {
     "id": "2",
     "name": "Gustav",
-    "image": ""
+    "image": "/images/gustav.png"
   },
   {
     "id": "3",
     "name": "Hildegard",
-    "image": ""
+    "image": "/images/hildegard.png"
   },
   {
     "id": "4",
     "name": "Bernd-Jürgen",
-    "image": ""
+    "image": "/images/bernd.png"
   },
   {
     "id": "5",
-    "name": "Carola",
-    "image": ""
+    "name": "Andrea",
+    "image": "/images/andrea.png"
   },
   {
     "id": "6",
     "name": "Karsten",
-    "image": ""
+    "image": "/images/karsten.png"
   }
 ]
