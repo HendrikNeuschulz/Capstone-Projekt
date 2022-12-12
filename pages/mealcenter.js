@@ -18,6 +18,7 @@ export default function Mealcenter({
 
   return (
     <>
+      <title>your tasty selection</title>
       <main>
         <Headline>WTF? What to food</Headline>
         {favouriteRecipes.length === 0 ? (
@@ -51,5 +52,5 @@ const Headline = styled.h1`
 const Subline = styled.h2`
   text-align: center;
   font-size: 22px;
-  font-family: "Caveat";
+  font-family: "oswald";
 `;
