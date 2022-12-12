@@ -30,6 +30,7 @@ export default function recipeDetailPage({ recipes }) {
 
   return (
     <>
+      <title>Recipe details</title>
       <StyledMain>
         <Card>
           <RecipeNameContainer>
@@ -118,7 +119,7 @@ const StyledFooter = styled.footer`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 0 6px;
+  padding: 7px 10px;
 `;
 
 const StyledList = styled.ul`

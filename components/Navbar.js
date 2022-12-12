@@ -13,7 +13,7 @@ function Navbar() {
           <StyledImage
             className={router.pathname == "/" ? "active" : "unactive"}
             id="Capa_1"
-            enable-background="new 0 0 511.999 511.999"
+            enableBackground="new 0 0 511.999 511.999"
             height="40"
             viewBox="0 0 511.999 511.999"
             width="40"
@@ -116,7 +116,7 @@ function Navbar() {
           <StyledImage
             className={router.pathname == "/mealcenter" ? "active" : "unactive"}
             id="Capa_1"
-            enable-background="new 0 0 512 512"
+            enableBackground="new 0 0 512 512"
             height="40"
             viewBox="0 0 512 512"
             width="40"
@@ -181,7 +181,7 @@ const SytledNav = styled.nav`
   position: fixed;
   bottom: 0;
   width: 100%;
-  padding: 8px 0 2px 0;
+  padding: 8px 0 8px 0;
   background-color: #ccc3ad;
 `;
 

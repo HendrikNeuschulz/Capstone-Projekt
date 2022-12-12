@@ -9,8 +9,6 @@ export default function FoodCard({
   onFindUserData,
   currentUser,
 }) {
-  console.log(recipe.likedBy.length);
-
   return (
     <Card>
       <RecipeNameContainer>
