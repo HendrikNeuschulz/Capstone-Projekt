@@ -10,7 +10,10 @@ All selected recipes appear in the favourites list. In the favourites list, the 
 
 Users also have the option of adding comments to the recipes, e.g. tips for the next preparation.
 
-<img src="./public/images/wtf1.PNG" width="150px"><img src="./public/images/wtf2.PNG" width="150px"><img src="./public/images/wtf3.PNG" width="150px"><img src="./public/images/wtf4.PNG" width="150px">
+<img src="./public/images/wtf1.PNG" width="200px">
+<img src="./public/images/wtf2.PNG" width="200px">
+<img src="./public/images/wtf3.PNG" width="200px">
+<img src="./public/images/wtf4.PNG" width="200px">
 
 ## Demo:
 
