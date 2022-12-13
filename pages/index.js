@@ -6,7 +6,7 @@ import Navbar from "../components/Navbar";
 function Home({ nextRecipe, onAddRecipesToFavourites, onFindRandomRecipe }) {
   return (
     <>
-      <title>Choose your meal</title>
+      <title>Choose your meal..</title>
       <main>
         <Headline>WTF? What to food </Headline>
         <Subline>What are you up for?</Subline>
