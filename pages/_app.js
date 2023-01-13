@@ -7,7 +7,7 @@ import recipeData from "../recipedata.json";
 function MyApp({ Component, pageProps }) {
   const [nextRecipe, setNextRecipe] = useState(null);
   const [recipes, setRecipes] = useLocalStorage("recipes", recipeData);
-  const currentUser = users[0];
+  const currentUser = users[1];
 
   useEffect(() => {
     findRandomRecipe();
