@@ -5,17 +5,20 @@ import Navbar from "../components/Navbar";
 
 function Home({ nextRecipe, onAddRecipesToFavourites, onFindRandomRecipe }) {
   return (
-    <main>
-      <Headline>WTF? What to food </Headline>
-      <Subline>What are you up for?</Subline>
+    <>
+      <title>Choose your meal..</title>
+      <main>
+        <Headline>WTF? What to food </Headline>
+        <Subline>What are you up for?</Subline>
 
-      <ChooseFoodCard
-        recipe={nextRecipe}
-        onAddRecipesToFavourites={onAddRecipesToFavourites}
-        onNextRecipe={onFindRandomRecipe}
-      />
+        <ChooseFoodCard
+          recipe={nextRecipe}
+          onAddRecipesToFavourites={onAddRecipesToFavourites}
+          onNextRecipe={onFindRandomRecipe}
+        />
+      </main>
       <Navbar />
-    </main>
+    </>
   );
 }
 
@@ -29,5 +32,5 @@ const Headline = styled.h1`
 const Subline = styled.h2`
   text-align: center;
   font-size: 22px;
-  font-family: "Caveat";
+  font-family: "oswald";
 `;

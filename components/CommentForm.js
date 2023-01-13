@@ -34,7 +34,7 @@ export default function CommentForm({ onAddComment, recipeId }) {
         >
           <StyledCheckIcon
             id="Layer_1"
-            enable-background="new 0 0 512.001 512.001"
+            enableBackground="new 0 0 512.001 512.001"
             height="40"
             viewBox="0 0 512.001 512.001"
             width="40"
@@ -54,8 +54,7 @@ export default function CommentForm({ onAddComment, recipeId }) {
 
 const StyledForm = styled.form`
   text-align: center;
-  margin: 20px;
-  padding: 10px;
+  font-family: oswald;
 `;
 
 const StyledButton = styled.button`
