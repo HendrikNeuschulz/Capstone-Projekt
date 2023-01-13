@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }) {
     "52999",
   ]);
   const [recipes, setRecipes] = useLocalStorage("recipes", recipeData);
-  const currentUser = users[0];
+  const currentUser = users[1];
 
   useEffect(() => {
     findRandomRecipe();
