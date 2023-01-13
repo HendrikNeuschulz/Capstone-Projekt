@@ -1,34 +1,47 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# My Capstone Project: WTF? - What to food
 
-## Getting Started
+---
 
-First, run the development server:
+WTF? - What to food? is designed to help users discover and cook great new recipes.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+Based on the pictures of a recipe, users can choose whether they want to save the recipe or display the next recipe.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+All selected recipes appear in the favourites list. In the favourites list, the user can see who else has selected this recipe. This can help to answer the question: what should we eat?
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Users also have the option of adding comments to the recipes, e.g. tips for the next preparation.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+<img src="./public/images/wtf1.PNG" width="200px">
+<img src="./public/images/wtf2.PNG" width="200px">
+<img src="./public/images/wtf3.PNG" width="200px">
+<img src="./public/images/wtf4.PNG" width="200px">
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Demo:
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+You can find the hosted version on [Vercel](https://capstone-project-wtf.vercel.app/)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Important the project is optimized for mobile screen.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## included Tech Stack
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- React
+- React Router
+- React Testing Library / Jest
+- Next.js
+- JavaScript
+- Styled Components
+- LocalStorage
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## How to setup?
+
+---
+
+- Clone this repository
+- Install all dependencies with $ npm install
+- Run app in dev mode with $ npm run dev
+  Server: http://localhost:3000/
+- Run tests via $ npm run test
+
